@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import Image from 'next/image';
 import { CheckCircle, Star } from 'lucide-react';
@@ -28,7 +29,13 @@ const LandingPage = () => {
                                 <p className="text-xl md:text-2xl text-gray-600 mb-8">
                                     Tudo o que você precisa saber para realizar seu casamento civil de forma simples e sem complicações
                                 </p>
-                                <button className="bg-gradient-to-r from-[#ff5757] to-[#dc568b] text-white text-lg px-8 py-4 rounded-lg hover:from-[#dc568b] hover:to-[#8c52ff] transition-all duration-300">
+                                <button onClick={() => {
+                                    const comprarSection = document.getElementById('comprar-ebook');
+                                    if (comprarSection) {
+                                        comprarSection.scrollIntoView({ behavior: 'smooth' });
+                                    }
+                                }} 
+                                className="bg-gradient-to-r from-[#ff5757] to-[#dc568b] text-white text-lg px-8 py-4 rounded-lg hover:from-[#dc568b] hover:to-[#8c52ff] transition-all duration-300">
                                     Quero meu e-book agora!
                                 </button>
                             </div>
@@ -234,7 +241,7 @@ const LandingPage = () => {
                 <LeadForm />
 
                 {/* Preço e CTA */}
-                <section className="py-16 relative">
+                <section id="comprar-ebook" className="py-16 relative">
                     <div className="absolute inset-0 bg-gradient-to-b from-[#8c52ff]/10 via-[#dc568b]/5 to-transparent" />
                     <div className="container mx-auto px-4 relative">
                         <div className="max-w-2xl mx-auto text-center">

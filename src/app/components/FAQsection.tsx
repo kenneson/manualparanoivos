@@ -43,7 +43,7 @@ const FAQSection = () => {
         <section className="py-16 relative">
             <div className="absolute inset-0 bg-gradient-to-br from-[#8c52ff]/5 via-transparent to-[#ff5757]/5" />
             <div className="container mx-auto px-4 relative">
-                <h2 className="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-[#8c52ff] to-[#dc568b] inline-block text-transparent bg-clip-text">
+                <h2 className="flex justify-center text-3xl font-bold text-center mb-12 bg-gradient-to-r from-[#8c52ff] to-[#dc568b] text-transparent bg-clip-text">
                     Perguntas Frequentes
                 </h2>
                 <div className="max-w-2xl mx-auto">

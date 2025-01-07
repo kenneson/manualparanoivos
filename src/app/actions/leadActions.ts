@@ -1,4 +1,4 @@
-'use server'; // Indica que este é um arquivo de Server Actions
+'use server';
 
 import { prisma, Lead } from '@/lib/prisma'; // Importa o Prisma Client e o tipo Lead
 
@@ -15,9 +15,9 @@ export async function createLead(formData: FormData): Promise<{ message: string;
             },
         });
 
-        return { message: 'Lead cadastrado com sucesso!', lead };
+        return { message: 'Cadastrado com sucesso!', lead };
     } catch (error) {
         console.error(error);
-        return { message: 'Erro ao cadastrar lead.' };
+        return { message: 'Erro ao cadastrar.' };
     }
 }
