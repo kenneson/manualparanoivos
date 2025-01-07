@@ -5,28 +5,33 @@ import { createLead } from '../actions/leadActions';
 
 const LeadForm = () => {
     const [message, setMessage] = useState<string>('');
+    const [isLoading, setIsLoading] = useState<boolean>(false); // Adicionado estado de loading
 
     const handleSubmit = async (formData: FormData) => {
+        setIsLoading(true); // Ativa o estado de loading
+        setMessage(''); // Limpa a mensagem anterior
+
         const result = await createLead(formData);
 
-        if (result.message === 'Lead cadastrado com sucesso!') {
-            setMessage(result.message);
+        if (result.lead) {
+            setMessage('Cadastrado com sucesso! Verifique seu email.'); // Mensagem de sucesso
         } else {
-            setMessage(result.message);
+            setMessage('Erro ao cadastrar. Tente novamente.'); // Mensagem de erro
         }
+
+        setIsLoading(false); // Desativa o estado de loading
     };
 
-    // Use o useEffect para limpar a mensagem após 3 segundos
+    // Use o useEffect para limpar a mensagem após 5 segundos
     useEffect(() => {
         if (message) {
             const timer = setTimeout(() => {
                 setMessage('');
-            }, 3000); // 3000 milissegundos = 3 segundos
+            }, 5000); // 5000 milissegundos = 5 segundos
 
-            // Limpa o timer se o componente for desmontado ou se a mensagem mudar antes dos 3 segundos
             return () => clearTimeout(timer);
         }
-    }, [message]); // Executa o efeito sempre que a mensagem mudar
+    }, [message]);
 
     return (
         <section className="py-16 bg-gradient-to-br from-[#8c52ff]/10 via-[#dc568b]/10 to-[#ff5757]/10">
@@ -55,12 +60,17 @@ const LeadForm = () => {
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-gradient-to-r from-[#ff5757] to-[#dc568b] text-white text-lg px-8 py-4 rounded-lg hover:from-[#dc568b] hover:to-[#8c52ff] transition-all duration-300"
+                        disabled={isLoading} // Desabilita o botão durante o loading
+                        className="w-full bg-gradient-to-r from-[#ff5757] to-[#dc568b] text-white text-lg px-8 py-4 rounded-lg hover:from-[#dc568b] hover:to-[#8c52ff] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                        Quero Receber Novidades!
+                        {isLoading ? 'Cadastrando...' : 'Quero Receber Novidades!'}
                     </button>
                     {message && (
-                        <p className="mt-4 text-center text-white bg-green-500 rounded-md p-2">
+                        <p
+                            className={`mt-4 text-center text-white rounded-md p-2 ${
+                                message.includes('sucesso') ? 'bg-green-500' : 'bg-red-500'
+                            }`}
+                        >
                             {message}
                         </p>
                     )}
