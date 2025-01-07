@@ -4,10 +4,10 @@ import { ChevronDown } from 'lucide-react';
 
 const FAQSection = () => {
     // Estado para controlar quais perguntas estão abertas
-    const [openIndex, setOpenIndex] = useState(null);
+    const [openIndex, setOpenIndex] = useState<number | null> (null);
 
     // Função para alternar o estado da pergunta
-    const toggleFAQ = (index) => {
+    const toggleFAQ = (index: number) => {
         setOpenIndex(openIndex === index ? null : index);
     };
 
