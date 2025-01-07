@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { CheckCircle, Star } from 'lucide-react';
 import FAQSection from '../components/FAQsection';
 import Footer from '../components/Footer';
+import LeadForm from '../components/LeadForm';
 
 const LandingPage = () => {
     const PreviewSection = () => {
@@ -230,6 +231,7 @@ const LandingPage = () => {
                         </div>
                     </div>
                 </section>
+                <LeadForm />
 
                 {/* Preço e CTA */}
                 <section className="py-16 relative">
