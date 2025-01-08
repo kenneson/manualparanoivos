@@ -1,4 +1,4 @@
-import { PrismaClient, Lead } from '../../prisma-client';
+import { PrismaClient, Lead } from '@prisma/client';
 
 // Verifica se já existe uma instância do Prisma Client no globalThis (para evitar múltiplas instâncias em desenvolvimento)
 const globalForPrisma = globalThis as unknown as {
