@@ -17,7 +17,7 @@ export async function sendEmail(to: string, name: string) {
         <h1>Olá, ${name}</h1>
         <p>Obrigado por se cadastrar no nosso serviço. Estamos muito felizes em tê-lo conosco!</p>
         <h3>Não se esqueça de nos seguir em nossas redes sociais: @manualparanoivos no Instagram e TikTok</h3>
-        <p>Atenciosamente,<br>Equipe Manual Para Noivos</p>
+        <p>Atenciosamente,<br>Equipe Manual Para Noivos !</p>
     `;
 
     const mailOptions = {
