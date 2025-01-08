@@ -34,8 +34,8 @@ const LandingPage = () => {
                                     if (comprarSection) {
                                         comprarSection.scrollIntoView({ behavior: 'smooth' });
                                     }
-                                }} 
-                                className="bg-gradient-to-r from-[#ff5757] to-[#dc568b] text-white text-lg px-8 py-4 rounded-lg hover:from-[#dc568b] hover:to-[#8c52ff] transition-all duration-300">
+                                }}
+                                    className="bg-gradient-to-r from-[#ff5757] to-[#dc568b] text-white text-lg px-8 py-4 rounded-lg hover:from-[#dc568b] hover:to-[#8c52ff] transition-all duration-300">
                                     Quero meu e-book agora!
                                 </button>
                             </div>
@@ -266,12 +266,13 @@ const LandingPage = () => {
                                         <span className='font-bold text-black'>Garantia de 7 dias</span>
                                     </li>
                                 </ul>
-                                <button className="w-full bg-gradient-to-r from-[#ff5757] to-[#dc568b] text-white text-lg px-8 py-4 rounded-lg hover:from-[#dc568b] hover:to-[#8c52ff] transition-all duration-300">
+                                <a href="https://pay.kiwify.com.br/hFeQAGN" target='_blank'><button className="w-full bg-gradient-to-r from-[#ff5757] to-[#dc568b] text-white text-lg px-8 py-4 rounded-lg hover:from-[#dc568b] hover:to-[#8c52ff] transition-all duration-300">
                                     Comprar agora
                                 </button>
+                                    </a>
+                                    </div>
                             </div>
                         </div>
-                    </div>
                 </section>
 
                 {/* FAQ */}
