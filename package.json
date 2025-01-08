@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "install": "prisma generate && npm install",
+    "build": "prisma generate && next build",
     "dev": "next dev --turbopack",
     "start": "next start",
     "lint": "next lint"
